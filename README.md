@@ -9,5 +9,6 @@ https://www.iotstarters.com/configuring-bmp280-sensor-with-raspberry-pi/
 
 
 - Antena radio
-https://www.waveshare.com/sx1262-868m-lora-hat.htm
+https://www.waveshare.com/SX1268-433M-LoRa-HAT.htm
+
 
