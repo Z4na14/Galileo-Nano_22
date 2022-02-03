@@ -1,2 +1,6 @@
 /GALI-NANO
 /.idea
+/Scripts
+/share
+/Lib
+pyvenv.cfg
