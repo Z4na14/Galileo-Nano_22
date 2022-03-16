@@ -7,7 +7,7 @@ except ImportError:
        from smbus import SMBus
 
 
-bus1 = SMBus(1) #Hay que crear otro bus mas para el otro sensor
+bus1 = SMBus(1)  #Hay que crear otro bus mas para el otro sensor
 bmp280 = BMP280(i2c_dev=bus1)
 """
 bus2 = 
