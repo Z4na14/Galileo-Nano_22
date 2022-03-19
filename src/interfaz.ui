@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>419</width>
-    <height>377</height>
+    <width>830</width>
+    <height>606</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,10 +17,10 @@
    <widget class="QPushButton" name="Activar">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>20</y>
-      <width>141</width>
-      <height>101</height>
+      <x>700</x>
+      <y>520</y>
+      <width>121</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
@@ -30,10 +30,10 @@
    <widget class="QPushButton" name="desactivar">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>30</y>
-      <width>141</width>
-      <height>101</height>
+      <x>570</x>
+      <y>520</y>
+      <width>121</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="acceptDrops">
@@ -43,13 +43,13 @@
      <string>Desactivar</string>
     </property>
    </widget>
-   <widget class="QLabel" name="etiqueta">
+   <widget class="QLabel" name="temp">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>180</y>
-      <width>181</width>
-      <height>61</height>
+      <x>440</x>
+      <y>20</y>
+      <width>131</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -74,6 +74,42 @@
     </property>
     <property name="text">
      <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="radiacion">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>20</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="presion">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>20</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="MplWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>90</y>
+      <width>461</width>
+      <height>401</height>
+     </rect>
     </property>
    </widget>
   </widget>
