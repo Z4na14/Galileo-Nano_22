@@ -3,4 +3,5 @@
 /Scripts
 /share
 /Lib
+/src/__pycache__
 pyvenv.cfg
