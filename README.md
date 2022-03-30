@@ -18,3 +18,4 @@ https://franciscomoya.gitbooks.io/taller-de-raspberry-pi/content/es/elems/i2c.ht
 https://www.instructables.com/Raspberry-PI-Multiple-I2c-Devices/#:~:text=Shut%20down%20your%20PI%2C%20switch,Switch%20on%20the%20pi.&text=Now%20you%20can%20use%20your%20sensor%20in%20your%20programming%20language.
 
 https://www.pccomponentes.com/intenso-pm5200-powerbank-5200mah-gris
+https://www.pccomponentes.com/energy-sistem-extra-battery-powerbank-2200mah-roja
