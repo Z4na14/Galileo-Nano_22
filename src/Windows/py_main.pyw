@@ -4,7 +4,7 @@ import matplotlib as matplotlib
 import openpyxl as excel
 
 from PyQt5.QtWidgets import QApplication, QMainWindow, qApp, QPushButton
-from pruebas_ui import Ui_MainWindow
+from ui_main import Ui_MainWindow
 
 
 class MyMainWindow(QMainWindow, Ui_MainWindow, QPushButton):
