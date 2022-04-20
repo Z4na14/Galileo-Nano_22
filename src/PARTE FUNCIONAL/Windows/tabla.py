@@ -28,90 +28,79 @@ tab4 = Argumentos
 
 # Función utilizada por al función de animar
 
-def Temperatura(i, xs, ys):
+def Animation(i, a, b, c, d):
+
+    #TEMPERATURA
 
     plt.subplot(2, 2, 1)
-
     # Datos random
-    temp_c = randint(20, 50)
-
+    temp_a = randint(20, 50)
     # Añandiendo los datos
     tiempo = dt.datetime.now().strftime("%H:%M:%S")
-    xs.append(tiempo)
-    ys.append(temp_c)
-
+    a.xs.append(tiempo)
+    a.ys.append(temp_a)
     # Redibujar la grafica
     ax.clear()
-    ax.plot(ys[-400:], )
-
+    ax.plot(a.ys[-400:], )
     # Cambiar el formato de la tabla
     plt.title('TEMPERATURA')
 
 
-def Presion(i, xs, ys):
+
+
+    #PRESIÓN
 
     plt.subplot(2, 2, 2)
-
     # Datos random
-    temp_c = randint(20, 50)
-
+    temp_b = randint(20, 50)
     # Añandiendo los datos
     tiempo = dt.datetime.now().strftime("%H:%M:%S")
-    xs.append(tiempo)
-    ys.append(temp_c)
-
+    b.xs.append(tiempo)
+    b.ys.append(temp_b)
     # Redibujar la grafica
     bx.clear()
-    bx.plot(ys[-400:], )
-
+    bx.plot(b.ys[-400:], )
     # Cambiar el formato de la tabla
     plt.title('PRESIÓN')
 
 
-def Radiacion(i, xs, ys):
+
+
+    #RADIACIÓN
 
     plt.subplot(2, 2, 3)
-
     # Datos random
     temp_c = randint(20, 50)
-
     # Añandiendo los datos
     tiempo = dt.datetime.now().strftime("%H:%M:%S")
-    xs.append(tiempo)
-    ys.append(temp_c)
-
+    c.xs.append(tiempo)
+    c.ys.append(temp_c)
     # Redibujar la grafica
     cx.clear()
-    cx.plot(ys[-400:], )
-
+    cx.plot(c.ys[-400:], )
     # Cambiar el formato de la tabla
     plt.title('RADIACIÓN')
 
 
-def Luz(i, xs, ys):
+
+
+    #LUZ
 
     plt.subplot(2, 2, 4)
-
     # Datos random
-    temp_c = randint(20, 50)
-
+    temp_d = randint(20, 50)
     # Añandiendo los datos
     tiempo = dt.datetime.now().strftime("%H:%M:%S")
-    xs.append(tiempo)
-    ys.append(temp_c)
-
+    d.xs.append(tiempo)
+    d.ys.append(temp_d)
     # Redibujar la grafica
     dx.clear()
-    dx.plot(ys[-400:], )
-
+    dx.plot(d.ys[-400:], )
     # Cambiar el formato de la tabla
     plt.title('LUZ')
 
 
 if __name__ == "__main__":
 
-    ani = animation.FuncAnimation(fig, Temperatura, fargs=(tab1.xs, tab1.ys), interval=1000)
-    ani = animation.FuncAnimation(fig, Presion, fargs=(tab2.xs, tab2.ys), interval=1000)
-    ani = animation.FuncAnimation(fig, Radiacion, fargs=(tab3.xs, tab3.ys), interval=100)
-    ani = animation.FuncAnimation(fig, Luz, fargs=(tab4.xs, tab4.ys), interval=1000)
+    ani = animation.FuncAnimation(fig, Animation, fargs=(tab1, tab2, tab3, tab4), interval=1000)
     plt.show()
