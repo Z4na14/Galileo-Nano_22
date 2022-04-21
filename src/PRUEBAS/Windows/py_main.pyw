@@ -1,7 +1,6 @@
 import sys
 
 import matplotlib as matplotlib
-import openpyxl as excel
 
 from PyQt5.QtWidgets import QApplication, QMainWindow, qApp, QPushButton
 from ui_main import Ui_MainWindow
