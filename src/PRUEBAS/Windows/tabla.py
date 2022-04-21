@@ -29,8 +29,7 @@ tab4 = Argumentos
 # Función utilizada por al función de animar
 
 def Animation(i, a, b, c, d):
-
-    #TEMPERATURA
+    # TEMPERATURA
 
     plt.subplot(2, 2, 1)
     # Datos random
@@ -45,10 +44,7 @@ def Animation(i, a, b, c, d):
     # Cambiar el formato de la tabla
     plt.title('TEMPERATURA')
 
-
-
-
-    #PRESIÓN
+    # PRESIÓN
 
     plt.subplot(2, 2, 2)
     # Datos random
@@ -63,10 +59,7 @@ def Animation(i, a, b, c, d):
     # Cambiar el formato de la tabla
     plt.title('PRESIÓN')
 
-
-
-
-    #RADIACIÓN
+    # RADIACIÓN
 
     plt.subplot(2, 2, 3)
     # Datos random
@@ -81,10 +74,7 @@ def Animation(i, a, b, c, d):
     # Cambiar el formato de la tabla
     plt.title('RADIACIÓN')
 
-
-
-
-    #LUZ
+    # LUZ
 
     plt.subplot(2, 2, 4)
     # Datos random
@@ -101,6 +91,5 @@ def Animation(i, a, b, c, d):
 
 
 if __name__ == "__main__":
-
     ani = animation.FuncAnimation(fig, Animation, fargs=(tab1, tab2, tab3, tab4), interval=1000)
     plt.show()
