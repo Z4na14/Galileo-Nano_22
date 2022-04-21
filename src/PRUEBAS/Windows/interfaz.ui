@@ -6,110 +6,73 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>830</width>
-    <height>606</height>
+    <width>1800</width>
+    <height>920</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1800</width>
+    <height>920</height>
+   </size>
+  </property>
+  <property name="cursor">
+   <cursorShape>ArrowCursor</cursorShape>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="Activar">
+   <widget class="QWidget" name="graficas" native="true">
     <property name="geometry">
      <rect>
-      <x>700</x>
-      <y>520</y>
-      <width>121</width>
+      <x>0</x>
+      <y>0</y>
+      <width>1801</width>
+      <height>611</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="empezar_boton">
+    <property name="geometry">
+     <rect>
+      <x>1570</x>
+      <y>630</y>
+      <width>211</width>
       <height>51</height>
      </rect>
     </property>
     <property name="text">
-     <string>Activar</string>
+     <string>EMPEZAR</string>
     </property>
-   </widget>
-   <widget class="QPushButton" name="desactivar">
-    <property name="geometry">
-     <rect>
-      <x>570</x>
-      <y>520</y>
-      <width>121</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="acceptDrops">
+    <property name="checkable">
      <bool>false</bool>
     </property>
-    <property name="text">
-     <string>Desactivar</string>
-    </property>
    </widget>
-   <widget class="QLabel" name="temp">
+   <widget class="QPushButton" name="terminar_boton">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>20</y>
-      <width>131</width>
+      <x>1570</x>
+      <y>690</y>
+      <width>211</width>
       <height>51</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>26</pointsize>
-     </font>
-    </property>
-    <property name="cursor">
-     <cursorShape>CrossCursor</cursorShape>
-    </property>
-    <property name="mouseTracking">
-     <bool>false</bool>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
-    </property>
-    <property name="autoFillBackground">
-     <bool>true</bool>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string>TERMINAR (EXPORTACIÓN DE DATOS)</string>
     </property>
    </widget>
-   <widget class="QLabel" name="radiacion">
+   <widget class="QLabel" name="datos_raw">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>20</y>
-      <width>47</width>
-      <height>13</height>
+      <x>10</x>
+      <y>640</y>
+      <width>531</width>
+      <height>251</height>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="presion">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>20</y>
-      <width>47</width>
-      <height>13</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
-   <widget class="QWidget" name="MplWidget" native="true">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>90</y>
-      <width>461</width>
-      <height>401</height>
-     </rect>
+     <string/>
     </property>
    </widget>
   </widget>
