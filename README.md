@@ -19,3 +19,4 @@
 
 - https://www.pccomponentes.com/intenso-pm5200-powerbank-5200mah-gris
 - https://www.pccomponentes.com/energy-sistem-extra-battery-powerbank-2200mah-roja
+- https://www.amazon.es/System-S-Grados-izquierda-acodado-2-0-tipo/dp/B01MYFEGTU/ref=sr_1_27?keywords=micro%2Busb%2Bangulo&sr=8-27&th=1
