@@ -1,7 +1,10 @@
 import datetime as dt
+import random
+
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from random import randint
+
 
 # Creamos la figura
 fig = plt.figure()

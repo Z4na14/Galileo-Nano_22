@@ -26,10 +26,10 @@
    <widget class="QWidget" name="graficas" native="true">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>1801</width>
-      <height>611</height>
+      <x>20</x>
+      <y>20</y>
+      <width>1751</width>
+      <height>591</height>
      </rect>
     </property>
    </widget>
@@ -65,8 +65,8 @@
    <widget class="QLabel" name="datos_raw">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>640</y>
+      <x>20</x>
+      <y>630</y>
       <width>531</width>
       <height>251</height>
      </rect>
