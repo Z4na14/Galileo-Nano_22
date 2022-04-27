@@ -1,8 +1,9 @@
-import datetime as dt
+from datetime import datetime as dt
 
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from matplotlib.widgets import Button
+from matplotlib import rcParams
 from random import randint
 
 
@@ -11,7 +12,10 @@ def cm_a_inch(valor):
 
 
 # Creamos la figura
+
+rcParams['toolbar'] = 'None'
 fig = plt.figure(figsize=(cm_a_inch(45), cm_a_inch(20)))
+
 ax = fig.add_subplot(2, 2, 1)
 bx = fig.add_subplot(2, 2, 2)
 cx = fig.add_subplot(2, 2, 3)
@@ -52,14 +56,15 @@ tab4 = Argumentos
 # Función utilizada por al función de animar
 
 def Animation(i, a, b, c, d):
+    hora = dt.now().strftime("%H:%M:%S")
+
     # TEMPERATURA
 
     plt.subplot(2, 2, 1)
     # Datos random
     temp_a = randint(20, 50)
     # Añandiendo los datos
-    tiempo = dt.datetime.now().strftime("%H:%M:%S")
-    a.xs.append(tiempo)
+    a.xs.append(hora)
     a.ys.append(temp_a)
     # Redibujar la grafica
     ax.clear()
@@ -73,8 +78,7 @@ def Animation(i, a, b, c, d):
     # Datos random
     temp_b = randint(20, 50)
     # Añandiendo los datos
-    tiempo = dt.datetime.now().strftime("%H:%M:%S")
-    b.xs.append(tiempo)
+    b.xs.append(hora)
     b.ys.append(temp_b)
     # Redibujar la grafica
     bx.clear()
@@ -88,8 +92,7 @@ def Animation(i, a, b, c, d):
     # Datos random
     temp_c = randint(20, 50)
     # Añandiendo los datos
-    tiempo = dt.datetime.now().strftime("%H:%M:%S")
-    c.xs.append(tiempo)
+    c.xs.append(hora)
     c.ys.append(temp_c)
     # Redibujar la grafica
     cx.clear()
@@ -103,8 +106,7 @@ def Animation(i, a, b, c, d):
     # Datos random
     temp_d = randint(20, 50)
     # Añandiendo los datos
-    tiempo = dt.datetime.now().strftime("%H:%M:%S")
-    d.xs.append(tiempo)
+    d.xs.append(hora)
     d.ys.append(temp_d)
     # Redibujar la grafica
     dx.clear()
