@@ -1,17 +1,37 @@
 import datetime as dt
-import random
 
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
+from matplotlib.widgets import Button
 from random import randint
 
 
+def cm_a_inch(valor):
+    return valor / 2.54
+
+
 # Creamos la figura
-fig = plt.figure()
+fig = plt.figure(figsize=(cm_a_inch(45), cm_a_inch(20)))
 ax = fig.add_subplot(2, 2, 1)
 bx = fig.add_subplot(2, 2, 2)
 cx = fig.add_subplot(2, 2, 3)
 dx = fig.add_subplot(2, 2, 4)
+
+plt.subplots_adjust(top=0.934,
+                    bottom=0.133,
+                    left=0.044,
+                    right=0.971,
+                    hspace=0.217,
+                    wspace=0.092)
+
+
+def exportar(val):
+    print("Hola")
+
+
+axes = plt.axes([0.87, 0.008, 0.1, 0.065])
+bnext = Button(axes, 'Exportar XML')
+bnext.on_clicked(exportar)
 
 
 class Argumentos:
