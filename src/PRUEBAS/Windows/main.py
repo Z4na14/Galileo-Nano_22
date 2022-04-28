@@ -17,7 +17,7 @@ def cm_a_inch(valor):
 # Creamos la figura
 
 rcParams['toolbar'] = 'None'
-fig = plt.figure(figsize=(cm_a_inch(45), cm_a_inch(20)))
+fig = plt.figure(figsize=(cm_a_inch(34), cm_a_inch(17)))
 
 fig.canvas.manager.set_window_title('Galileo Nano 2022')
 
@@ -51,11 +51,11 @@ def exportar(val):
             cont += 1
 
 
-axes1 = plt.axes([0.75, 0.008, 0.1, 0.065])
+axes1 = plt.axes([0.64, 0.008, 0.15, 0.065])
 bempezar = Button(axes1, 'Empezar recogida')
 bempezar.on_clicked(empezar)
 
-axes2 = plt.axes([0.87, 0.008, 0.1, 0.065])
+axes2 = plt.axes([0.82, 0.008, 0.15, 0.065])
 bacabar = Button(axes2, 'Exportar XLSX')
 bacabar.on_clicked(exportar)
 
