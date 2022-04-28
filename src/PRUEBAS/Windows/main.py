@@ -6,7 +6,11 @@ from matplotlib.widgets import Button
 from matplotlib import rcParams
 from numpy.random import randint as np
 from openpyxl import Workbook
-import PIL
+from openpyxl.chart import (
+    LineChart,
+    Reference
+)
+from openpyxl.chart.axis import DateAxis
 
 
 def cm_a_inch(valor):
@@ -150,14 +154,18 @@ def Animation(i, a, b, c, d):
     plt.title('LUZ')
 
 
-"""
-paused = True
-
-
 def empezar(val):
-    paused = False
-"""
+    tab1.xs = []
+    tab1.ys = []
 
+    tab2.xs = []
+    tab2.ys = []
+
+    tab3.xs = []
+    tab3.ys = []
+
+    tab4.xs = []
+    tab4.ys = []
 
 def exportar(val):
     nom = None
@@ -179,7 +187,7 @@ def exportar(val):
 
 axes1 = plt.axes([0.64, 0.008, 0.15, 0.065])
 bempezar = Button(axes1, 'Empezar recogida')
-# bempezar.on_clicked(empezar)
+bempezar.on_clicked(empezar)
 
 axes2 = plt.axes([0.82, 0.008, 0.15, 0.065])
 bacabar = Button(axes2, 'Exportar XLSX')
