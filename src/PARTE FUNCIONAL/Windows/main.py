@@ -12,14 +12,10 @@ from openpyxl.chart import (
 )
 from openpyxl.chart.axis import DateAxis
 
-from sx126x import sx126x
-
 
 def cm_a_inch(valor):
     return valor / 2.54
 
-
-node = sx126x(serial_num="COM6", freq=433, addr=0, power=22, rssi=True)
 
 # Creamos la figura
 
@@ -97,22 +93,14 @@ ws4['A1'] = 'LECTURAS'
 def Animation(i, a, b, c, d):
     hora = dt.now().strftime("%H:%M:%S")
 
-    datos_recibidos = str(node.receive())
-
-#    if datos_recibidos[:3] == 'AAA':
-    temp_a = datos_recibidos[5:11]
-    temp_b = datos_recibidos[13:20]
-    temp_c = datos_recibidos[22:22]
-    temp_d = datos_recibidos[24:25]
-
-
     # TEMPERATURA
 
     plt.subplot(2, 2, 1)
+    # Datos random
+    temp_a = np(20, 50)
     # Añandiendo los datos
-    if datos_recibidos != None:
-        a.xs.append(hora)
-        a.ys.append(temp_a)
+    a.xs.append(hora)
+    a.ys.append(temp_a)
     # Redibujar la grafica
     ax.clear()
     # if not paused:
@@ -124,10 +112,10 @@ def Animation(i, a, b, c, d):
 
     plt.subplot(2, 2, 2)
     # Datos random
+    temp_b = np(20, 50)
     # Añandiendo los datos
-    if datos_recibidos != None:
-        b.xs.append(hora)
-        b.ys.append(temp_b)
+    b.xs.append(hora)
+    b.ys.append(temp_b)
     # Redibujar la grafica
     bx.clear()
     # if not paused:
@@ -139,10 +127,10 @@ def Animation(i, a, b, c, d):
 
     plt.subplot(2, 2, 3)
     # Datos random
+    temp_c = np(20, 50)
     # Añandiendo los datos
-    if datos_recibidos != None:
-        c.xs.append(hora)
-        c.ys.append(temp_c)
+    c.xs.append(hora)
+    c.ys.append(temp_c)
     # Redibujar la grafica
     cx.clear()
     # if not paused:
@@ -154,20 +142,16 @@ def Animation(i, a, b, c, d):
 
     plt.subplot(2, 2, 4)
     # Datos random
+    temp_d = np(20, 50)
     # Añandiendo los datos
-    if datos_recibidos != None:
-        d.xs.append(hora)
-        d.ys.append(temp_d)
+    d.xs.append(hora)
+    d.ys.append(temp_d)
     # Redibujar la grafica
     dx.clear()
     # if not paused:
     dx.plot(d.ys[-400:], )
     # Cambiar el formato de la tabla
     plt.title('LUZ')
-
-
-
-
 
 
 def empezar(val):
@@ -182,7 +166,6 @@ def empezar(val):
 
     tab4.xs = []
     tab4.ys = []
-
 
 def exportar(val):
     nom = None
