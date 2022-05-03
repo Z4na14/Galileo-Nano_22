@@ -98,17 +98,19 @@ def Animation(i, a, b, c, d):
     hora = dt.now().strftime("%H:%M:%S")
 
     datos_recibidos = str(node.receive())
-
-#    if datos_recibidos[:3] == 'AAA':
+    print(datos_recibidos)
+    """
+    #    if datos_recibidos[:3] == 'AAA':
     temp_a = datos_recibidos[5:11]
     temp_b = datos_recibidos[13:20]
     temp_c = datos_recibidos[22:22]
     temp_d = datos_recibidos[24:25]
-
+    """
 
     # TEMPERATURA
-
+    """
     plt.subplot(2, 2, 1)
+    
     # Añandiendo los datos
     if datos_recibidos != None:
         a.xs.append(hora)
@@ -166,7 +168,7 @@ def Animation(i, a, b, c, d):
     plt.title('LUZ')
 
 
-
+    """
 
 
 
@@ -213,6 +215,6 @@ bacabar.on_clicked(exportar)
 ani = animation.FuncAnimation(fig=fig,
                               func=Animation,
                               fargs=(tab1, tab2, tab3, tab4),
-                              interval=1000)
+                              interval=1250)
 plt.show()
 register(wb.save, 'Datos.xlsx')
