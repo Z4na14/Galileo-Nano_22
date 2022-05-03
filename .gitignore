@@ -3,4 +3,5 @@
 /share
 /Lib
 /src/__pycache__
+/src/Windows/__pycache__
 pyvenv.cfg
