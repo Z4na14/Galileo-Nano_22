@@ -20,10 +20,10 @@ from sx126x import sx126x
 def cm_a_inch(valor):
     return valor / 2.54
 
-
+"""
 process = Popen(['cat', 'sub_datos.py'], stdout=PIPE)
 stdout = process.communicate()
-
+"""
 node = sx126x(serial_num="COM6", freq=433, addr=0, power=22, rssi=True)
 
 # Creamos la figura
