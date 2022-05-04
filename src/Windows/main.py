@@ -12,12 +12,17 @@ from openpyxl.chart import (
 )
 from openpyxl.chart.axis import DateAxis
 
+from subprocess import PIPE, Popen
+
 from sx126x import sx126x
 
 
 def cm_a_inch(valor):
     return valor / 2.54
 
+
+process = Popen(['cat', 'sub_datos.py'], stdout=PIPE)
+stdout = process.communicate()
 
 node = sx126x(serial_num="COM6", freq=433, addr=0, power=22, rssi=True)
 
@@ -169,7 +174,6 @@ def Animation(i, a, b, c, d):
 
 
     """
-
 
 
 def empezar(val):
