@@ -20,7 +20,7 @@ bmp = bmp280.Adafruit_BMP280_I2C(i2c, 0x76)
 
 
 def send_deal():
-    get_rec = "0," + "AAA" + " " + str(bmp.temperature)[:7] + " " + str(bmp.pressure)[:8] + " " + str(ltr.uvs)[:4] + " " + str(ltr.light) + " "
+    get_rec = "0," + "AAA" + " " + str(bmp.temperature)[:5] + " " + str(bmp.pressure)[:7] + " " + str(ltr.uvs)[:4] + " " + str(ltr.light) + " "
 
     get_t = get_rec.split(",")
 
