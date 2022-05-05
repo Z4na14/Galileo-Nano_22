@@ -3,14 +3,10 @@ import sx126x
 import threading
 import time
 import select
-import termios
-import tty
 import busio, board
 import adafruit_bmp280 as bmp280
 import adafruit_ltr390 as ltr390
 
-old_settings = termios.tcgetattr(sys.stdin)
-tty.setcbreak(sys.stdin.fileno())
 
 node = sx126x.sx126x(serial_num="/dev/ttyS0", freq=433, addr=0, power=22, rssi=False)
 
@@ -54,6 +50,4 @@ try:
         send_deal()
 
 except:
-    termios.tcsetattr(sys.stdin, termios.TCSADRAIN, old_settings)
-
-termios.tcsetattr(sys.stdin, termios.TCSADRAIN, old_settings)
+    print("Sa matao")
