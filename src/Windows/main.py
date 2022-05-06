@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from matplotlib.widgets import Button
 from matplotlib import rcParams
-
+import atexit
 from openpyxl import Workbook
 
 from sx126x import sx126x
@@ -16,13 +16,20 @@ def cm_a_inch(valor):
 
 node = sx126x(serial_num="COM6", freq=433, addr=0, power=22, rssi=True)
 
-
 # Creamos la figura
 
 rcParams['toolbar'] = 'None'
 fig = plt.figure(figsize=(cm_a_inch(34), cm_a_inch(17)))
 
 fig.canvas.manager.set_window_title('Galileo Nano 2022')
+
+archivo = open('exportación.txt', 'w')
+archivo.write("")
+archivo.close()
+
+archivo_hora = open('hora.txt', 'w')
+archivo_hora.write("")
+archivo_hora.close()
 
 ax = fig.add_subplot(2, 2, 1)
 bx = fig.add_subplot(2, 2, 2)
@@ -87,52 +94,53 @@ ws3['A1'] = 'LECTURAS'
 ws4['B1'] = 'TIEMPO'
 ws4['A1'] = 'LECTURAS'
 
-
 # Función utilizada por al función de animate
 
-def Animation(i, abc, bbc, cbc, dbc):
-    a = 0
-    b = 0
-    temp_a = ""
-    temp_b = ""
-    temp_c = ""
-    temp_d = ""
+a = 0
+b = 0
+temp_aa = ""
+temp_bb = ""
+temp_cc = ""
+temp_dd = ""
 
+archivo = open('exportación.txt', 'a')
+archivo_hora = open('hora.txt', 'a')
+
+def Animation(i, abc, bbc, cbc, dbc, a, b, temp_a, temp_b, temp_c, temp_d, archivo_datos, dato_hora):
     hora = dt.now().strftime("%H:%M:%S")
 
     datos_recibidos = str(node.receive())
     print(datos_recibidos)
 
+    dato_hora.write(hora + '\n')
+
     if datos_recibidos[:3] == 'AAA':
         for z in datos_recibidos:
 
-            a = a+1
-            if a <5:
+            a = a + 1
+            if a < 5:
                 continue
             elif a >= 5:
-                    if z == " ":
-                        b =b+1
-                        continue
-                    elif a != " ":
-                        if b == 0:
-                            temp_a = temp_a+str(z)
-                        if b == 1:
-                            temp_b = temp_b+str(z)
-                        if b == 2:
-                            temp_c = temp_c+str(z)
-                        if b == 3:
-                            temp_d = temp_d+str(z)
-                        if b > 3:
-                            break
+                if z == " ":
+                    b = b + 1
+                    continue
+                elif a != " ":
+                    if b == 0:
+                        temp_a = temp_a + str(z)
+                    if b == 1:
+                        temp_b = temp_b + str(z)
+                    if b == 2:
+                        temp_c = temp_c + str(z)
+                    if b == 3:
+                        temp_d = temp_d + str(z)
+                    if b > 3:
+                        break
 
-    print(temp_a)
-    print(temp_b)
-    print(temp_c)
-    print(temp_d)
+    archivo_datos.write(temp_a+" "+temp_b+" "+temp_c+" "+temp_d + '\n')
     # TEMPERATURA
 
     plt.subplot(2, 2, 1)
-    
+
     # Añandiendo los datos
     abc.xs.append(str(hora))
     abc.ys.append(temp_a)
@@ -142,7 +150,7 @@ def Animation(i, abc, bbc, cbc, dbc):
     ax.plot(abc.ys[-400:], )
     # Cambiar el formato de la tabla
     plt.title('TEMPERATURA')
-    plt.axis('off')
+    # plt.axis('off')
 
     # PRESIÓN
 
@@ -157,7 +165,7 @@ def Animation(i, abc, bbc, cbc, dbc):
     bx.plot(bbc.ys[-400:], )
     # Cambiar el formato de la tabla
     plt.title('PRESIÓN')
-    plt.axis('off')
+    # plt.axis('off')
 
     # RADIACIÓN
 
@@ -172,7 +180,7 @@ def Animation(i, abc, bbc, cbc, dbc):
     cx.plot(cbc.ys[-400:], )
     # Cambiar el formato de la tabla
     plt.title('RADIACIÓN')
-    plt.axis('off')
+    # plt.axis('off')
 
     # LUZ
 
@@ -187,8 +195,7 @@ def Animation(i, abc, bbc, cbc, dbc):
     dx.plot(dbc.ys[-400:], )
     # Cambiar el formato de la tabla
     plt.title('LUZ')
-    plt.axis('off')
-
+    # plt.axis('off')
 
 
 def empezar(val):
@@ -249,7 +256,9 @@ bacabar.on_clicked(exportar)
 
 ani = animation.FuncAnimation(fig=fig,
                               func=Animation,
-                              fargs=(tab1, tab2, tab3, tab4),
+                              fargs=(tab1, tab2, tab3, tab4, a, b, temp_aa, temp_bb, temp_cc, temp_dd, archivo, archivo_hora),
                               interval=1250)
 plt.show()
-register(wb.save, 'Datos.xlsx')
+atexit.register(wb.save, 'Datos.xlsx')
+atexit.register(func=archivo.close())
+atexit.register(func=archivo_hora.close())
