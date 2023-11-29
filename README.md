@@ -2,6 +2,8 @@
 
 [![Twitter](https://img.shields.io/twitter/follow/galileo_nano22?style=social)](https://twitter.com/galileo_nano22) ![lastcommit](https://img.shields.io/github/last-commit/galileonano22/Galileo-Nano_22)
 
+### Due to lack of time and experience, the code was poorly done and barely works
+
 # Galieo Nano
 Todo el proyecto ha sido programado en Python para mayor flexibilidad y eficacia debido al gran número de librerías que facilitan el trabajo y el uso de un lenguaje tan sencillo (comparado con otros sistemas como arduino que usa C + +). Para la ejecución del programa en el raspberry pi zero hemos usado el SO de raspbian lite 32 bits para evitar problemas de compatibilidad. Hemos usado las librerías matplotlib, pyqt5 y openpyxl para la estación de tierra y las librerías estándar de adafruit para la lectura e interpretación del puerto I2C de los sensores.
 
